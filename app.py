@@ -2,12 +2,14 @@ import os
 import json
 import sqlite3
 import re
+import os
+port = int(os.environ.get("PORT", 8080))
 from datetime import datetime
 from flask import Flask, request, session, redirect, url_for, render_template_string, send_from_directory
 from groq import Groq
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
-
+ 
 app = Flask(__name__)
 app.secret_key = "gradex-secret-key-2024"
 
@@ -1462,5 +1464,4 @@ def logout():
     return redirect(url_for("home"))
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(host="0.0.0.0", port=8080, debug=False)
