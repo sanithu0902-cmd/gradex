@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = "gradex-secret-key-2024"
 
 # IMPORTANT: Add your Groq API key here
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+client = Groq(api_key=os.environ.get("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"))
 
 TEACHER_CODE = "teacher123"
 ADMIN_CODE = "admin123"
