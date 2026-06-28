@@ -2,19 +2,17 @@ import os
 import json
 import sqlite3
 import re
-import os
-port = int(os.environ.get("PORT", 8080))
 from datetime import datetime
 from flask import Flask, request, session, redirect, url_for, render_template_string, send_from_directory
 from groq import Groq
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
- 
+
 app = Flask(__name__)
 app.secret_key = "gradex-secret-key-2024"
 
 # IMPORTANT: Add your Groq API key here
-client = Groq(api_key="GROQ_API_KEY")
+client = Groq(api_key=os.environ.get("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"))
 
 TEACHER_CODE = "teacher123"
 ADMIN_CODE = "admin123"
